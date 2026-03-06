@@ -163,7 +163,11 @@ const MotorisationDomotiquePage = () => {
         </div>
       </section>
 
-      <ProcessSection />
+      <ProcessSection 
+        title="Comment Motoriser Vos Volets Roulants Existants ?"
+        subtitle="De l'audit de vos volets actuels à la configuration de votre application smartphone, voici le processus de motorisation."
+        detail="Nous motorisons vos volets manuels sans travaux de maçonnerie. Le moteur tubulaire est installé directement dans le tube d'enroulement existant. Compatibilité Somfy TaHoma, Google Home, Alexa, Apple HomeKit."
+      />
       <QuoteFormSection />
       <RepairShowcaseSection image={motorizationTechnicianImg} title="Motorisation Connectée — La Défense & Bureaux IDF"
         description="Du quartier d'affaires de La Défense aux résidences modernes d'Île-de-France, nous motorisons et connectons vos volets aux dernières technologies smart home. Solutions adaptées aux immeubles tertiaires et résidentiels."
@@ -174,7 +178,18 @@ const MotorisationDomotiquePage = () => {
           { icon: Settings, label: "Marques", value: "Somfy/Bubendorff", color: "text-service-blue", iconBg: "bg-service-blue/10" },
         ]}
       />
-      <FAQSection />
+      <FAQSection
+        title="Questions Fréquentes — Motorisation & Domotique Volets Roulants"
+        subtitle="Tout savoir sur la motorisation de volets : prix, compatibilité domotique, types de moteurs, installation."
+        faqs={[
+          { q: "Peut-on motoriser n'importe quel volet roulant manuel ?", a: "Oui, dans 95% des cas. Un moteur tubulaire s'installe dans le tube d'enroulement existant sans modifier le coffre ni la façade. Seuls les très anciens modèles à treuil peuvent nécessiter une adaptation." },
+          { q: "Quel est le prix de la motorisation d'un volet ?", a: "Comptez à partir de 200€/volet pour un moteur filaire, 300€ pour un moteur radio, et 450€ pour un moteur connecté compatible smartphone. Remises dégressives pour plusieurs volets." },
+          { q: "Mes volets motorisés seront-ils compatibles Google Home / Alexa ?", a: "Oui, avec les moteurs Somfy io-homecontrol et la box TaHoma. Nous configurons entièrement votre installation : appairage des volets, création de scénarios automatisés, programmation horaire." },
+          { q: "Combien de temps dure la motorisation d'un volet ?", a: "1 à 2 heures par volet. Pour un logement complet (5-8 volets), comptez une journée. L'installation est propre et ne nécessite aucun travaux de maçonnerie." },
+          { q: "Que se passe-t-il en cas de coupure de courant ?", a: "Tous les moteurs que nous installons disposent d'un déverrouillage manuel de secours. Les volets solaires sont autonomes grâce à leur batterie (45 jours d'autonomie). Les moteurs radio fonctionnent aussi sur pile de secours." },
+          { q: "Peut-on centraliser tous les volets sur une seule télécommande ?", a: "Oui, la centralisation est l'un de nos points forts. Une télécommande multicanaux ou l'application Somfy TaHoma vous permet de piloter tous vos volets simultanément ou individuellement." },
+        ]}
+      />
       <TestimonialsSection />
 
       {/* Maillage interne contextuel */}

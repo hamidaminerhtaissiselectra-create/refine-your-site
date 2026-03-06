@@ -151,7 +151,11 @@ const DepannageExpressPage = () => {
         </div>
       </section>
 
-      <ProcessSection />
+      <ProcessSection 
+        title="Comment Fonctionne Notre Dépannage Express ?"
+        subtitle="Un processus optimisé pour résoudre votre urgence le plus rapidement possible, du premier appel à la résolution complète."
+        detail="Notre service d'urgence est conçu pour les situations critiques : volet bloqué ouvert la nuit, tentative d'effraction, dégâts d'intempéries. Nos techniciens d'astreinte interviennent dans l'heure à Paris."
+      />
       <QuoteFormSection />
       <RepairShowcaseSection image={emergencyTechnicianImg} title="Dépannage Urgence à Paris — Montmartre & Sacré-Cœur"
         description="De jour comme de nuit, nos équipes sillonnent Paris pour résoudre vos urgences volets. Du quartier de Montmartre aux Grands Boulevards, nous intervenons dans l'heure pour sécuriser votre domicile."
@@ -162,7 +166,18 @@ const DepannageExpressPage = () => {
           { icon: Wrench, label: "Résolu 1er passage", value: "95%", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
         ]}
       />
-      <FAQSection />
+      <FAQSection
+        title="Questions Fréquentes — Dépannage Express Volets Roulants"
+        subtitle="Réponses à vos questions sur notre service de dépannage d'urgence pour volets roulants."
+        faqs={[
+          { q: "Intervenez-vous la nuit pour un volet bloqué ?", a: "Oui, notre service d'astreinte couvre les urgences nocturnes à Paris et petite couronne. Un volet bloqué en position ouverte la nuit est traité en priorité absolue. Appelez le 06 03 20 59 67." },
+          { q: "Quel est le délai d'intervention en urgence ?", a: "À Paris intra-muros, nous intervenons généralement en moins d'1 heure. En petite couronne (92, 93, 94), comptez 1 à 2 heures. En grande couronne, intervention le jour même." },
+          { q: "Y a-t-il un surcoût pour le dépannage le week-end ?", a: "Un forfait week-end/jour férié s'applique (majoration de 30€). Cependant, le diagnostic reste gratuit et le devis est établi avant toute intervention. Aucune surprise." },
+          { q: "Que faire en attendant le technicien si mon volet est bloqué ouvert ?", a: "Sécurisez votre domicile : fermez les fenêtres et portes, allumez les lumières visibles de l'extérieur. Si c'est une tentative d'effraction, contactez aussi la police." },
+          { q: "Pouvez-vous intervenir après une tentative de cambriolage ?", a: "Absolument. Nous réparons les lames forcées, remettons en état les coulisses et installons des dispositifs anti-relevage renforcés. Nous fournissons un devis agréé par les assurances." },
+          { q: "Le dépannage est-il couvert par mon assurance habitation ?", a: "Dans la plupart des cas, oui. Les interventions suite à effraction ou intempéries sont couvertes par votre assurance. Nous établissons un devis conforme aux exigences des assureurs." },
+        ]}
+      />
       <TestimonialsSection />
 
       {/* Maillage interne contextuel */}
