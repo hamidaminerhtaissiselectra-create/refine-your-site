@@ -85,11 +85,7 @@ const RepairShowcaseSection = ({ image, title, description, highlights, stats }:
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border">
-              {[
-                { icon: Zap, label: "Diagnostic", value: "15 min", color: "text-service-blue", iconBg: "bg-service-blue/10" },
-                { icon: Shield, label: "Garantie", value: "3 ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
-                { icon: Clock, label: "Intervention", value: "48h max", color: "text-service-orange", iconBg: "bg-service-orange/10" },
-              ].map((stat, index) => (
+              {displayStats.map((stat, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
