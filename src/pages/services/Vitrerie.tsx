@@ -192,7 +192,7 @@ const VitreriePage = () => {
           { q: "Le double vitrage améliore-t-il vraiment l'isolation ?", a: "Oui, le double vitrage réduit les pertes de chaleur de 40% par rapport au simple vitrage. Avec un gaz argon entre les deux vitres, l'isolation thermique est encore renforcée. Éligible à MaPrimeRénov'." },
         ]}
       />
-      <TestimonialsSection />
+      <TestimonialsSection priorityService="vitrerie" title="Avis Clients — Vitrerie & Remplacement de Vitrage" subtitle="Témoignages de nos clients après un remplacement de vitrage en urgence ou programmé." />
 
       {/* Maillage interne contextuel */}
       <section className="py-12 bg-section-gradient">

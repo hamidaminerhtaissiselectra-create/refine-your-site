@@ -167,7 +167,7 @@ const ReparationVoletsPage = () => {
           { q: "Faut-il remplacer mon volet ou peut-on le réparer ?", a: "Dans 80% des cas, la réparation est possible et plus économique. Nous vous conseillons honnêtement : si le volet a plus de 20 ans ou que le caisson est endommagé, le remplacement peut être préférable." },
         ]}
       />
-      <TestimonialsSection />
+      <TestimonialsSection priorityService="réparation" title="Avis Clients — Réparation de Volets Roulants" subtitle="Ce que nos clients disent de nos interventions de réparation à Paris et en Île-de-France." />
 
       {/* Maillage interne contextuel */}
       <section className="py-12 bg-section-gradient">
