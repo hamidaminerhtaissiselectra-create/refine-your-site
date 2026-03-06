@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { GlassWater, CheckCircle2, ArrowRight, Phone, ChevronRight, AlertTriangle, ShieldCheck } from "lucide-react";
+import { GlassWater, CheckCircle2, ArrowRight, Phone, ChevronRight, AlertTriangle, ShieldCheck, Clock, Thermometer, Shield } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -170,6 +170,11 @@ const VitreriePage = () => {
       <RepairShowcaseSection image={glazierTechnicianImg} title="Vitrerie d'Excellence — Île de la Cité & Bords de Seine"
         description="Des vitraux historiques de l'Île de la Cité aux baies vitrées modernes des quais de Seine, notre expertise en vitrerie couvre tous les besoins. Remplacement, sécurisation et installation avec une précision millimétrée."
         highlights={["Expertise des vitrages patrimoniaux et contemporains", "Mise en sécurité immédiate après bris de glace", "Vitrages certifiés conformes aux normes en vigueur", "Accompagnement pour la prise en charge assurance"]}
+        stats={[
+          { icon: Clock, label: "Urgence vitrage", value: "2h", color: "text-service-rose", iconBg: "bg-service-rose/10" },
+          { icon: Thermometer, label: "Isolation", value: "-40% pertes", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+          { icon: Shield, label: "Norme", value: "EN 356", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+        ]}
       />
       <FAQSection />
       <TestimonialsSection />

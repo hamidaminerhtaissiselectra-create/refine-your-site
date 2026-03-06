@@ -168,6 +168,11 @@ const MotorisationDomotiquePage = () => {
       <RepairShowcaseSection image={motorizationTechnicianImg} title="Motorisation Connectée — La Défense & Bureaux IDF"
         description="Du quartier d'affaires de La Défense aux résidences modernes d'Île-de-France, nous motorisons et connectons vos volets aux dernières technologies smart home. Solutions adaptées aux immeubles tertiaires et résidentiels."
         highlights={["Motorisation adaptée aux bureaux et résidences modernes", "Installation de moteurs silencieux et performants", "Configuration domotique et appairage smartphone", "Compatibilité Google Home, Alexa, Apple HomeKit"]}
+        stats={[
+          { icon: Smartphone, label: "Connecté", value: "100%", color: "text-service-violet", iconBg: "bg-service-violet/10" },
+          { icon: Shield, label: "Garantie moteur", value: "5 ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+          { icon: Settings, label: "Marques", value: "Somfy/Bubendorff", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+        ]}
       />
       <FAQSection />
       <TestimonialsSection />
