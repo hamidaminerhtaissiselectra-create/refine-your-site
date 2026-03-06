@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Zap, Shield, Clock } from "lucide-react";
+import { CheckCircle2, Zap, Shield, Clock, LucideIcon } from "lucide-react";
+
+interface StatItem {
+  icon: LucideIcon;
+  label: string;
+  value: string;
+  color: string;
+  iconBg: string;
+}
 
 interface RepairShowcaseSectionProps {
   image: string;
   title: string;
   description: string;
   highlights: string[];
+  stats?: StatItem[];
 }
 
 const RepairShowcaseSection = ({ image, title, description, highlights }: RepairShowcaseSectionProps) => {
