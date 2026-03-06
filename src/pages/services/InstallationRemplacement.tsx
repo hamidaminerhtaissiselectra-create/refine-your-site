@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { RefreshCcw, CheckCircle2, ArrowRight, Phone, Shield, ChevronRight, Thermometer, Volume2, Sun } from "lucide-react";
+import { RefreshCcw, CheckCircle2, ArrowRight, Phone, Shield, ChevronRight, Thermometer, Volume2, Sun, Ruler, Award, Clock } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -160,6 +160,11 @@ const InstallationRemplacementPage = () => {
       <RepairShowcaseSection image={installationTechnicianImg} title="Installation sur Mesure — Place des Vosges & Marais"
         description="Nous installons des volets roulants adaptés à chaque type d'architecture parisienne, des hôtels particuliers du Marais aux résidences de standing de Versailles. Notre expertise garantit une intégration parfaite, respectant l'esthétique de votre façade."
         highlights={["Adaptation aux contraintes architecturales parisiennes", "Installation propre sans dégradation de vos façades", "Respect du patrimoine historique et des copropriétés", "Nettoyage complet du chantier après intervention"]}
+        stats={[
+          { icon: Ruler, label: "Sur-mesure", value: "100%", color: "text-service-violet", iconBg: "bg-service-violet/10" },
+          { icon: Award, label: "Durée de vie", value: "20+ ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+          { icon: Clock, label: "Pose", value: "½ journée", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+        ]}
       />
       <FAQSection />
       <TestimonialsSection />

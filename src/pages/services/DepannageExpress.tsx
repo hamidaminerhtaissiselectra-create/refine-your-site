@@ -156,6 +156,11 @@ const DepannageExpressPage = () => {
       <RepairShowcaseSection image={emergencyTechnicianImg} title="Dépannage Urgence à Paris — Montmartre & Sacré-Cœur"
         description="De jour comme de nuit, nos équipes sillonnent Paris pour résoudre vos urgences volets. Du quartier de Montmartre aux Grands Boulevards, nous intervenons dans l'heure pour sécuriser votre domicile."
         highlights={["Intervention dans l'heure à Paris et petite couronne", "Disponibilité 24h/24, 7 jours sur 7", "Connaissance parfaite des quartiers parisiens", "Diagnostic gratuit et transparence totale"]}
+        stats={[
+          { icon: Clock, label: "Réactivité", value: "< 1h", color: "text-service-rose", iconBg: "bg-service-rose/10" },
+          { icon: Shield, label: "Dispo", value: "7j/7", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+          { icon: Wrench, label: "Résolu 1er passage", value: "95%", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+        ]}
       />
       <FAQSection />
       <TestimonialsSection />

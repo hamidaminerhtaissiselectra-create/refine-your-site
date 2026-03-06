@@ -1,7 +1,7 @@
 import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Wrench, ArrowRight, Phone, ChevronRight, AlertTriangle, CheckCircle2, Shield, Clock, Award } from "lucide-react";
+import { Wrench, ArrowRight, Phone, ChevronRight, AlertTriangle, CheckCircle2, Shield, Clock, Award, Zap } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -145,6 +145,11 @@ const ReparationVoletsPage = () => {
       <RepairShowcaseSection image={repairTechnicianImg} title="Intervention Rapide à Paris — Quartiers Haussmanniens"
         description="Nous intervenons dans tous les arrondissements de Paris, des immeubles haussmanniens du 7e et 16e aux résidences du Marais et de Montmartre. Nos techniciens connaissent les spécificités des volets roulants parisiens et disposent de pièces adaptées à chaque type de bâtiment."
         highlights={["Intervention dans tous les arrondissements de Paris", "Expertise des immeubles haussmanniens et historiques", "Pièces de rechange en stock dans le véhicule", "Garantie 3 ans pièces et main d'œuvre"]}
+        stats={[
+          { icon: Zap, label: "Diagnostic", value: "15 min", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+          { icon: Shield, label: "Garantie", value: "3 ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+          { icon: Award, label: "Satisfaction", value: "98%", color: "text-service-orange", iconBg: "bg-service-orange/10" },
+        ]}
       />
       <FAQSection />
       <TestimonialsSection />
