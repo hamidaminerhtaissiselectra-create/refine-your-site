@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, Calendar, User, ChevronRight, BookOpen, Phone } from "lucide-react";
@@ -22,6 +22,22 @@ const BlogPage = () => {
     keywords: "blog volet roulant, entretien volet, guide motorisation, comparatif Somfy Bubendorff, conseils vitrerie",
     canonicalUrl: "https://reparaction-volets.fr/blog",
   });
+
+  useEffect(() => {
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://reparaction-volets.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Blog Expert", "item": "https://reparaction-volets.fr/blog" }
+      ]
+    };
+    const s = document.createElement('script');
+    s.type = 'application/ld+json';
+    s.innerHTML = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(s);
+    return () => { document.head.removeChild(s); };
+  }, []);
 
   // Get unique categories
   const categories = [...new Set(blogArticles.map((a) => a.category))];
