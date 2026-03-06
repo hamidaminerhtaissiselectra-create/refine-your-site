@@ -140,7 +140,11 @@ const ReparationVoletsPage = () => {
         </div>
       </section>
 
-      <ProcessSection />
+      <ProcessSection 
+        title="Comment Se Déroule une Réparation de Volet Roulant ?"
+        subtitle="De votre appel à la remise en état complète de votre volet, voici les étapes de notre intervention de réparation."
+        detail="Nos techniciens arrivent équipés des pièces les plus courantes (lames, sangles, moteurs Somfy/Bubendorff). 95% des réparations sont finalisées au premier passage, en 1 à 2 heures."
+      />
       <QuoteFormSection />
       <RepairShowcaseSection image={repairTechnicianImg} title="Intervention Rapide à Paris — Quartiers Haussmanniens"
         description="Nous intervenons dans tous les arrondissements de Paris, des immeubles haussmanniens du 7e et 16e aux résidences du Marais et de Montmartre. Nos techniciens connaissent les spécificités des volets roulants parisiens et disposent de pièces adaptées à chaque type de bâtiment."
@@ -151,7 +155,18 @@ const ReparationVoletsPage = () => {
           { icon: Award, label: "Satisfaction", value: "98%", color: "text-service-orange", iconBg: "bg-service-orange/10" },
         ]}
       />
-      <FAQSection />
+      <FAQSection
+        title="Questions Fréquentes — Réparation de Volets Roulants"
+        subtitle="Tout savoir sur la réparation de volets roulants : prix, délais, garantie, marques compatibles."
+        faqs={[
+          { q: "Combien coûte la réparation d'un volet roulant à Paris ?", a: "Le coût varie selon la panne : remplacement de sangle (60-120€), changement de moteur (180-350€), remplacement de lames (80-200€). Diagnostic gratuit et devis détaillé avant intervention." },
+          { q: "Réparez-vous les volets de toutes les marques ?", a: "Oui, nous intervenons sur toutes les marques : Somfy, Bubendorff, Profalux, Franciaflex, Simu, Nice, Becker, Came, Zurflüh-Feller. Pièces d'origine garanties." },
+          { q: "En combien de temps mon volet sera-t-il réparé ?", a: "95% des réparations sont finalisées en 1 à 2 heures au premier passage. Nos véhicules sont équipés des pièces les plus courantes pour éviter un second déplacement." },
+          { q: "Quelle garantie sur la réparation ?", a: "Toutes nos réparations sont garanties 3 ans pièces et main d'œuvre. Nous utilisons exclusivement des pièces d'origine certifiées par les fabricants." },
+          { q: "Mon volet est bloqué en position ouverte, que faire ?", a: "Appelez immédiatement le 06 03 20 59 67. Un volet bloqué ouvert représente un risque de sécurité. Nous intervenons en priorité pour sécuriser votre domicile, 7j/7." },
+          { q: "Faut-il remplacer mon volet ou peut-on le réparer ?", a: "Dans 80% des cas, la réparation est possible et plus économique. Nous vous conseillons honnêtement : si le volet a plus de 20 ans ou que le caisson est endommagé, le remplacement peut être préférable." },
+        ]}
+      />
       <TestimonialsSection />
 
       {/* Maillage interne contextuel */}

@@ -3,7 +3,19 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { fadeUp } from "@/lib/animations";
 import { useEffect } from "react";
 
-const faqs = [
+interface FAQItem {
+  q: string;
+  a: string;
+}
+
+interface FAQSectionProps {
+  title?: string;
+  subtitle?: string;
+  detail?: string;
+  faqs?: FAQItem[];
+}
+
+const defaultFaqs: FAQItem[] = [
   { q: "Combien coûte la réparation d'un volet roulant à Paris ?", a: "Le coût d'une réparation de volet roulant à Paris varie selon le type de panne. Une réparation de sangle ou de manivelle coûte entre 60€ et 120€. Le remplacement d'un moteur Somfy ou Bubendorff se situe entre 180€ et 350€. Répar'Action Volets réalise un diagnostic gratuit et vous remet un devis détaillé avant toute intervention — sans surprise ni frais cachés." },
   { q: "Qui peut réparer mes volets roulants en urgence le week-end à Paris ?", a: "Répar'Action Volets propose un service d'urgence disponible 7 jours sur 7, y compris les week-ends et jours fériés. Nous intervenons en priorité pour les volets bloqués en position ouverte (risque de sécurité), les bris de glace et les dommages liés à une tentative d'effraction. Appelez le 06 03 20 59 67 pour une intervention rapide." },
   { q: "Quels types et marques de volets roulants réparez-vous ?", a: "Nos techniciens interviennent sur tous les types de volets roulants : manuels (sangle, manivelle, treuil), électriques (filaires, radio, solaires), ainsi que les volets en aluminium, PVC ou bois. Nous sommes experts de toutes les grandes marques : Somfy, Bubendorff, Profalux, Franciaflex, Simu, Nice, Becker, Came, Zurflüh-Feller." },
@@ -18,13 +30,19 @@ const faqs = [
   { q: "Comment connecter mes volets roulants à Google Home ou Alexa ?", a: "Répar'Action Volets installe des moteurs Somfy (protocoles RTS et io-homecontrol) et Bubendorff compatibles avec les principales plateformes domotiques : Somfy TaHoma, Google Home, Amazon Alexa, Apple HomeKit. Après l'installation du moteur, nous configurons votre application smartphone et vos scénarios automatisés (lever/coucher du soleil, programmation horaire)." },
 ];
 
-const FAQSection = () => {
-  // Inject FAQPage schema dynamically for pages that include this section
+const FAQSection = ({
+  title = "Questions Fréquentes — Réparation & Installation de Volets Roulants à Paris",
+  subtitle = "Retrouvez les réponses aux questions les plus posées sur la réparation, l'installation, la motorisation de volets roulants et la vitrerie à Paris et en Île-de-France.",
+  detail = "Ces réponses sont rédigées par nos techniciens experts, forts de plus de 10 ans d'expérience terrain. Si votre question ne figure pas ici, appelez le <a href=\"tel:0603205967\" class=\"text-accent font-semibold hover:underline\">06 03 20 59 67</a> — un conseiller technique vous répond directement.",
+  faqs,
+}: FAQSectionProps) => {
+  const displayFaqs = faqs || defaultFaqs;
+
   useEffect(() => {
     const faqSchema = {
       "@context": "https://schema.org",
       "@type": "FAQPage",
-      "mainEntity": faqs.map(f => ({
+      "mainEntity": displayFaqs.map(f => ({
         "@type": "Question",
         "name": f.q,
         "acceptedAnswer": {
@@ -38,7 +56,6 @@ const FAQSection = () => {
     script.type = 'application/ld+json';
     script.id = 'faq-schema';
     script.innerHTML = JSON.stringify(faqSchema);
-    // Only add if not already present
     if (!document.getElementById('faq-schema')) {
       document.head.appendChild(script);
     }
@@ -46,7 +63,7 @@ const FAQSection = () => {
       const existing = document.getElementById('faq-schema');
       if (existing) existing.remove();
     };
-  }, []);
+  }, [displayFaqs]);
 
   return (
     <section className="py-12 sm:py-16 md:py-20 bg-section-gradient relative overflow-hidden" itemScope itemType="https://schema.org/FAQPage">
@@ -54,15 +71,15 @@ const FAQSection = () => {
         <motion.div {...fadeUp} className="text-center max-w-2xl mx-auto mb-14">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-semibold border border-accent/20 mb-4">FAQ</span>
           <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground mt-2 mb-4">
-            Questions Fréquentes — Réparation & Installation de Volets Roulants à Paris
+            {title}
           </h2>
-          <p className="text-muted-foreground mb-3">Retrouvez les réponses aux questions les plus posées sur la réparation, l'installation, la motorisation de volets roulants et la vitrerie à Paris et en Île-de-France.</p>
-          <p className="text-muted-foreground text-sm">Ces réponses sont rédigées par nos techniciens experts, forts de plus de 10 ans d'expérience terrain. Si votre question ne figure pas ici, appelez le <a href="tel:0603205967" className="text-accent font-semibold hover:underline">06 03 20 59 67</a> — un conseiller technique vous répond directement.</p>
+          <p className="text-muted-foreground mb-3">{subtitle}</p>
+          <p className="text-muted-foreground text-sm" dangerouslySetInnerHTML={{ __html: detail }} />
         </motion.div>
 
         <motion.div {...fadeUp} className="max-w-3xl mx-auto">
           <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((f, i) => (
+            {displayFaqs.map((f, i) => (
               <AccordionItem 
                 key={i}
                 value={`faq-${i}`} 

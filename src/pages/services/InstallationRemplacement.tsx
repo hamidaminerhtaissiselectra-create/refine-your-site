@@ -155,7 +155,11 @@ const InstallationRemplacementPage = () => {
         </div>
       </section>
 
-      <ProcessSection />
+      <ProcessSection 
+        title="Les Étapes de Votre Installation de Volets Roulants"
+        subtitle="De la visite technique à la mise en service, découvrez comment nous installons vos volets roulants sur-mesure."
+        detail="Chaque installation commence par une visite technique gratuite pour prendre les mesures exactes et évaluer les contraintes architecturales. Fabrication sur-mesure en usine, puis pose soignée par nos artisans certifiés RGE."
+      />
       <QuoteFormSection />
       <RepairShowcaseSection image={installationTechnicianImg} title="Installation sur Mesure — Place des Vosges & Marais"
         description="Nous installons des volets roulants adaptés à chaque type d'architecture parisienne, des hôtels particuliers du Marais aux résidences de standing de Versailles. Notre expertise garantit une intégration parfaite, respectant l'esthétique de votre façade."
@@ -166,7 +170,18 @@ const InstallationRemplacementPage = () => {
           { icon: Clock, label: "Pose", value: "½ journée", color: "text-service-blue", iconBg: "bg-service-blue/10" },
         ]}
       />
-      <FAQSection />
+      <FAQSection
+        title="Questions Fréquentes — Installation & Remplacement de Volets"
+        subtitle="Tout savoir sur l'installation de volets roulants neufs : matériaux, prix, aides financières, durée des travaux."
+        faqs={[
+          { q: "Quel est le prix d'une installation de volet roulant neuf ?", a: "Comptez entre 350€ et 900€ par volet pose comprise (aluminium ou PVC). Les volets solaires Somfy/Bubendorff se situent entre 600€ et 1 200€. Devis gratuit après visite technique." },
+          { q: "Aluminium ou PVC : quel matériau choisir ?", a: "L'aluminium offre le meilleur rapport poids/résistance, une isolation thermique supérieure et plus de 200 coloris. Le PVC est plus économique et suffisant pour les fenêtres standard. Nous vous conseillons selon vos besoins." },
+          { q: "Combien de temps dure l'installation ?", a: "Comptez une demi-journée pour 1 à 3 volets, une journée complète pour 4 à 8 volets. L'installation est propre : nous protégeons vos sols et murs et nettoyons le chantier après intervention." },
+          { q: "Puis-je bénéficier de MaPrimeRénov' pour mes volets ?", a: "Oui, notre certification RGE vous permet de bénéficier de MaPrimeRénov', de l'éco-PTZ et du crédit d'impôt pour l'installation de volets isolants. Nous vous accompagnons dans les démarches." },
+          { q: "Installez-vous des volets solaires ?", a: "Oui, les volets solaires Somfy et Bubendorff sont notre spécialité. Autonomes avec panneau photovoltaïque intégré, ils ne nécessitent aucun raccordement électrique. Idéaux en rénovation." },
+          { q: "Faut-il un permis ou une autorisation pour installer des volets ?", a: "En copropriété, l'accord du syndic est souvent nécessaire (respect de l'harmonie de la façade). En maison individuelle, une déclaration préalable de travaux peut être requise selon la commune. Nous vous guidons." },
+        ]}
+      />
       <TestimonialsSection />
 
       {/* Maillage interne contextuel */}
