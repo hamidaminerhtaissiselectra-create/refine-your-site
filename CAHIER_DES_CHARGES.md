@@ -1,7 +1,7 @@
 # 📋 CAHIER DES CHARGES COMPLET — Répar'Action Volets
 
 **Dernière mise à jour** : 6 mars 2026  
-**Version** : 5.0  
+**Version** : 5.1  
 **Statut** : ✅ Production
 
 ---
@@ -322,4 +322,34 @@ pnpm run check
 
 ---
 
-**Répar'Action Volets — Cahier des charges v5.0**
+## HISTORIQUE DES MODIFICATIONS v5.1
+
+### TestimonialsSection — Personnalisée par service
+- Chaque page service affiche les témoignages triés par pertinence (ex: page Vitrerie → témoignage bris de glace en premier)
+- Titres et sous-titres uniques par page service
+- Prop `priorityService` ajoutée au composant
+
+### FAQSection — FAQs uniques par page  
+- Chaque page service a 6 FAQs spécifiques (réparation, dépannage, installation, motorisation, vitrerie)
+- Schéma JSON-LD FAQPage généré dynamiquement avec les FAQs de la page courante
+- Pages régions Paris et IdF enrichies avec 6 FAQs contextuelles chacune
+
+### ProcessSection — Titres contextualisés
+- Chaque page service a son propre titre, sous-titre et description détaillée
+- Props `title`, `subtitle`, `detail`, `badge` ajoutées au composant
+
+### RepairShowcaseSection — Stats uniques par page
+- Prop `stats` ajoutée pour passer des statistiques personnalisées
+- 5 jeux de stats différents (Réparation, Dépannage, Installation, Motorisation, Vitrerie)
+
+### Sitemap.xml — Complété
+- Ajout des articles de blog locaux manquants : `choisir-volet-roulant-marais-paris`, `depannage-volet-montmartre-paris-18`
+- Vérification de la cohérence avec les routes de l'application
+
+### Pages Régions — FAQs enrichies
+- Page Paris : 6 FAQs détaillées (prix, arrondissements, haussmannien, motorisation, RGE)
+- Page IdF : 6 FAQs détaillées (délais, déplacement, départements, copropriétés, marques, maintenance)
+
+---
+
+**Répar'Action Volets — Cahier des charges v5.1**
