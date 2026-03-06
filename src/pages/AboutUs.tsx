@@ -53,7 +53,14 @@ const AboutUsPage = () => {
   });
 
   useEffect(() => {
-    
+    const breadcrumbSchema = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://reparaction-volets.fr" },
+        { "@type": "ListItem", "position": 2, "name": "Qui Sommes-Nous", "item": "https://reparaction-volets.fr/qui-sommes-nous" }
+      ]
+    };
     const organizationSchema = {
       "@context": "https://schema.org",
       "@type": "Organization",
@@ -78,12 +85,17 @@ const AboutUsPage = () => {
       "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "500", "bestRating": "5" }
     };
 
+    const scriptBc = document.createElement('script');
+    scriptBc.type = 'application/ld+json';
+    scriptBc.innerHTML = JSON.stringify(breadcrumbSchema);
+    document.head.appendChild(scriptBc);
+
     const scriptOrg = document.createElement('script');
     scriptOrg.type = 'application/ld+json';
     scriptOrg.innerHTML = JSON.stringify(organizationSchema);
     document.head.appendChild(scriptOrg);
 
-    return () => { document.head.removeChild(scriptOrg); };
+    return () => { document.head.removeChild(scriptBc); document.head.removeChild(scriptOrg); };
   }, []);
 
   return (

@@ -68,12 +68,12 @@ const RepairShowcaseSection = ({ image, title, description, highlights }: Repair
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-4 pt-8 border-t border-border">
+            <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border">
               {[
-                { icon: Zap, label: "Diagnostic", value: "15 min", color: "text-service-blue" },
-                { icon: Shield, label: "Garantie", value: "3 ans", color: "text-service-emerald" },
-                { icon: Clock, label: "Intervention", value: "48h max", color: "text-service-orange" },
-              ].slice(0, 2).map((stat, index) => (
+                { icon: Zap, label: "Diagnostic", value: "15 min", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+                { icon: Shield, label: "Garantie", value: "3 ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+                { icon: Clock, label: "Intervention", value: "48h max", color: "text-service-orange", iconBg: "bg-service-orange/10" },
+              ].map((stat, index) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, y: 20 }}
@@ -82,9 +82,11 @@ const RepairShowcaseSection = ({ image, title, description, highlights }: Repair
                   transition={{ delay: 0.5 + index * 0.1 }}
                   className="text-center"
                 >
-                  <stat.icon className="h-6 w-6 text-accent mx-auto mb-2" />
-                  <p className="text-sm text-muted-foreground">{stat.label}</p>
-                  <p className={`font-bold ${stat.color}`}>{stat.value}</p>
+                  <div className={`w-10 h-10 rounded-xl ${stat.iconBg} flex items-center justify-center mx-auto mb-2`}>
+                    <stat.icon className={`h-5 w-5 ${stat.color}`} />
+                  </div>
+                  <p className="text-xs text-muted-foreground font-medium">{stat.label}</p>
+                  <p className={`font-bold text-lg ${stat.color}`}>{stat.value}</p>
                 </motion.div>
               ))}
             </div>

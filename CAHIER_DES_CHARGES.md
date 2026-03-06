@@ -1,7 +1,7 @@
 # 📋 CAHIER DES CHARGES COMPLET — Répar'Action Volets
 
 **Dernière mise à jour** : 6 mars 2026  
-**Version** : 4.0  
+**Version** : 5.0  
 **Statut** : ✅ Production
 
 ---
@@ -99,39 +99,50 @@ Chaque page contient :
 1. **Navbar** — Navigation sticky avec liens + CTA
 2. **HeroSection** — Parallaxe, CTA principal, badges confiance
 3. **ServicesSection** — 5 cartes services avec images et badges colorés
-4. **QuoteFormSection** — Formulaire de devis multi-étapes
-5. **AboutSection** — Présentation entreprise, chiffres clés
-6. **ProcessSection** — 4 étapes (timeline visuelle)
-7. **ImageTextSection** — Section image + texte expertise
-8. **TestimonialsSection** — Avis clients
+4. **QuoteFormSection** — Formulaire de devis multi-étapes (Formspree)
+5. **AboutSection** — Présentation entreprise, chiffres clés animés
+6. **ProcessSection** — 6 étapes (timeline visuelle)
+7. **ImageTextSection** — Section image + texte expertise + maillage blog
+8. **TestimonialsSection** — 6 avis clients complets avec badges colorés
 9. **ServiceRegionsSection** — Toutes les régions de France (dépliable, redirections actives uniquement pour Paris/IDF)
-10. **FAQSection** — FAQ avec Schema.org
-11. **ContactSection** — Coordonnées + map
-12. **Footer** — Liens, légal, réseaux
+10. **FAQSection** — 12 FAQ avec Schema.org FAQPage + microdata
+11. **ContactSection** — Coordonnées + Google Maps embed
+12. **Footer** — Liens, légal, réseaux, Schema.org LocalBusiness
 
 ### 5.1 Sections pages internes (services, à propos, etc.)
-Chaque page interne affiche une section **LocalZonesGrid** en bas de page, montrant 12 zones Paris/IDF dans un **ordre différent** (shuffle déterministe basé sur l'identifiant de la page). Ceci assure un maillage interne varié et un contenu unique par page pour le SEO.
+Chaque page interne affiche :
+- **LocalZonesGrid** en bas de page, montrant 16 zones Paris/IDF dans un **ordre différent** (shuffle déterministe basé sur l'identifiant de la page)
+- **Section "Services Complémentaires"** avec maillage interne vers les autres services et articles de blog pertinents (v5.0)
 
 ---
 
 ## 6. DESIGN SYSTEM
 
 ### Palette de couleurs (tokens sémantiques)
-- `--primary` : Bleu principal
-- `--accent` : Orange CTA
+- `--primary` : Bleu principal (213 72% 30%)
+- `--accent` : Bleu ciel CTA (205 85% 45%)
 - `--service-blue`, `--service-orange`, `--service-emerald`, `--service-violet`, `--service-rose`, `--service-cyan` : Badges par service
 - `--background`, `--foreground`, `--muted`, `--muted-foreground` : Textes et fonds
 
 ### Typography
-- **Display** : Font-display (titres)
-- **Body** : Font sans-serif (texte)
+- **Display** : Plus Jakarta Sans (titres)
+- **Body** : Inter (texte)
 
 ### Composants réutilisables
 - Badges colorés par service (style unifié : `bg-[color]/90 text-white border shadow-md backdrop-blur-sm`)
+- Badge variants shadcn : `serviceBlue`, `serviceOrange`, `serviceEmerald`, `serviceRose`, `serviceViolet`, `serviceCyan`, `accent`
 - Cartes avec `card-shadow` / `card-shadow-hover`
 - Boutons : `variant="accent"`, `variant="accent-outline"`
 - Sections avec `bg-section-gradient`
 - Statistiques colorées avec tokens `text-service-blue`, `text-service-violet`, `text-service-emerald`, `text-service-orange`
+- RepairShowcaseSection : 3 stats colorées avec icônes (Diagnostic, Garantie, Intervention)
+
+### Animations (Framer Motion)
+- `fadeUp`, `fadeLeft`, `fadeRight`, `fadeIn` — Scroll reveal
+- `staggerItem(i)` — Items décalés dans les grilles
+- `hoverLift`, `hoverLiftMd` — Élévation au survol
+- `heroEntry(delay)` — Animation d'entrée de page
+- Parallaxe Hero avec `useScroll` / `useTransform`
 
 ---
 
@@ -141,19 +152,26 @@ Chaque page interne affiche une section **LocalZonesGrid** en bas de page, montr
 - ✅ H1 unique par page avec mots-clés
 - ✅ Meta description unique < 160 chars
 - ✅ URLs SEO-friendly
-- ✅ Balises ALT sur images
-- ✅ Maillage interne contextuel
+- ✅ Balises ALT sur images (descriptives avec mots-clés)
+- ✅ Maillage interne contextuel (services → blog, blog → services)
 - ✅ Sitemap XML (93 URLs)
 - ✅ Robots.txt (bots IA autorisés : GPTBot, ClaudeBot, PerplexityBot)
 
-### Schema.org
-- ✅ LocalBusiness (enrichi : @id, foundingDate, hasCredential RGE/Qualibat)
-- ✅ Service (pages services)
-- ✅ FAQPage (accueil + pages zones)
-- ✅ BreadcrumbList (sous-pages)
+### Schema.org (v5.0 — enrichi)
+- ✅ LocalBusiness (enrichi : @id, foundingDate 2014, hasCredential RGE/Qualibat, numberOfEmployees, knowsAbout)
+- ✅ Organization (contactPoint customer service + emergency 7j/7)
+- ✅ Service × 5 avec AggregateRating individuel
+- ✅ FAQPage (accueil index.html + composant FAQSection dynamique + pages zones)
+- ✅ BreadcrumbList (accueil + toutes les sous-pages : services, blog, à propos, zones)
 - ✅ HowTo ("Comment faire réparer un volet roulant ?")
-- ✅ AggregateRating
-- ✅ Organization (contactPoint)
+- ✅ AggregateRating (4.9/5, 500 avis)
+- ✅ Review × 3 (avis structurés individuels)
+- ✅ WebSite avec SearchAction
+- ✅ WebPage avec SpeakableSpecification (recherche vocale)
+
+### GEO Meta Tags
+- ✅ `geo.region`, `geo.placename`, `geo.position`, `ICBM`
+- ✅ Coordonnées GPS dans LocalBusiness
 
 ### Mots-clés principaux
 - Réparation volet roulant Paris
@@ -165,7 +183,14 @@ Chaque page interne affiche une section **LocalZonesGrid** en bas de page, montr
 - Artisan RGE volets
 
 ### Blog SEO (18 articles)
-Sujets : entretien volets, comparatifs marques (Somfy vs Bubendorff), guides motorisation, économies d'énergie, aides financières, volets solaires, articles hyper-locaux (Paris 15e, Marais, Boulogne, Saint-Denis, Versailles, Créteil)
+Sujets : entretien volets, comparatifs marques (Somfy vs Bubendorff), guides motorisation, économies d'énergie, aides financières, volets solaires, articles hyper-locaux
+
+### Maillage interne (v5.0)
+- ✅ Pages services → liens vers les 4 autres services
+- ✅ Pages services → liens vers 3 articles de blog pertinents
+- ✅ Page blog → liens vers les 5 services
+- ✅ ImageTextSection (accueil) → liens vers 3 articles blog
+- ✅ LocalZonesGrid → liens vers toutes les pages zones
 
 ---
 
@@ -178,10 +203,13 @@ Sujets : entretien volets, comparatifs marques (Somfy vs Bubendorff), guides mot
 
 ### Optimisations
 - ✅ Lazy loading images (composants et routes)
-- ✅ Code splitting (lazy imports React)
+- ✅ Code splitting (lazy imports React — 15 routes lazy-loaded)
 - ✅ Images WebP optimisées
 - ✅ Responsive mobile-first
 - ✅ Framer Motion animations (fadeUp, stagger, parallaxe)
+- ✅ Font preload (Inter + Plus Jakarta Sans)
+- ✅ DNS-prefetch pour CDN images
+- ✅ Performance Observer (LCP monitoring)
 
 ### Breakpoints
 - Mobile : < 640px (1 colonne)
@@ -192,33 +220,41 @@ Sujets : entretien volets, comparatifs marques (Somfy vs Bubendorff), guides mot
 
 ## 9. FICHIERS DE DONNÉES
 
-| Fichier | Contenu | Lignes | Statut |
-|---------|---------|--------|--------|
-| `src/data/zonesPagesData.ts` | 53 pages zones (20 arrondissements + 33 villes IDF) | ~1568 | ✅ OK |
-| `src/data/blogArticles.ts` | 18 articles de blog SEO | ~1373 | ✅ OK |
-| `src/data/content.ts` | Contenu centralisé (contact, nav, hero, services) | ~100 | ✅ Nettoyé v4.0 |
-| `src/data/regionsData.ts` | Données régions Paris + IDF | ~55 | ✅ OK |
-| `src/data/idfCities.ts` | Mapping villes IDF par département | ~72 | ✅ OK |
-| `src/data/villes-geolocalisation.ts` | Coordonnées GPS des 53 zones | ~63 | ✅ OK |
-
-### Fichiers nettoyés (v4.0)
-- ❌ `src/data/citiesData.ts` — **Supprimé** (4463 lignes de données "HD Connect" d'un ancien projet, non utilisé)
-- ✅ `src/data/content.ts` — **Nettoyé** (suppression des références "HD Connect", remplacement par contenu Répar'Action Volets)
-- ✅ `src/hooks/usePhoneCall.tsx` — **Corrigé** (message WhatsApp mis à jour pour volets roulants)
+| Fichier | Contenu | Statut |
+|---------|---------|--------|
+| `src/data/zonesPagesData.ts` | 53 pages zones (20 arrondissements + 33 villes IDF) | ✅ OK |
+| `src/data/blogArticles.ts` | 18 articles de blog SEO | ✅ OK |
+| `src/data/content.ts` | Contenu centralisé (contact, nav, hero, services) | ✅ Nettoyé v4.0 |
+| `src/data/regionsData.ts` | Données régions Paris + IDF | ✅ OK |
+| `src/data/idfCities.ts` | Mapping villes IDF par département | ✅ OK |
+| `src/data/villes-geolocalisation.ts` | Coordonnées GPS des 53 zones | ✅ OK |
 
 ---
 
-## 10. HARMONISATION VISUELLE (v4.0)
+## 10. HARMONISATION VISUELLE (v5.0)
 
 ### ✅ Badges overlay services
 Style unifié sur toutes les pages services pour correspondre à la page d'accueil :
 - `bg-[service-color]/90 text-white border shadow-md backdrop-blur-sm`
-- Pages impactées : DepannageExpress, InstallationRemplacement, ReparationVolets, MotorisationDomotique, Vitrerie
+- Badge variants shadcn : `serviceBlue`, `serviceOrange`, `serviceEmerald`, `serviceRose`, `serviceViolet`, `serviceCyan`
 
 ### ✅ Statistiques colorées
 Couleurs par token sémantique appliquées sur toutes les pages :
 - `text-service-blue`, `text-service-violet`, `text-service-emerald`, `text-service-orange`
-- Pages impactées : ZonesIntervention, ParisPage, IdFPage, MiniTestimonials, RegionHeroParallax, RepairShowcaseSection
+
+### ✅ RepairShowcaseSection (v5.0)
+- Affichage des 3 stats (Diagnostic 15min, Garantie 3 ans, Intervention 48h) au lieu de 2
+- Icônes colorées avec background sémantique (`bg-service-blue/10`, etc.)
+- Uniformisation avec le style des autres sections
+
+### ✅ TestimonialsSection (v5.0)
+- Affichage des 6 témoignages complets au lieu de 3
+- Chaque témoignage avec badge coloré par service
+
+### ✅ Maillage interne contextuel (v5.0)
+- Section "Services Complémentaires" ajoutée à toutes les pages services
+- Liens vers les 4 autres services + 3 articles blog pertinents
+- Style cohérent avec la page blog (rounded-full, border, hover)
 
 ---
 
@@ -233,7 +269,7 @@ Couleurs par token sémantique appliquées sur toutes les pages :
 - [ ] **Google Business Profile** : configuration et optimisation
 - [ ] **Pages régions hors IDF** : activer les redirections vers des pages dédiées quand le contenu sera prêt
 - [ ] **Optimisation images** : vérifier poids, dimensions, alt-text de toutes les images
-- [ ] **Preconnect fonts / DNS-prefetch** : ajouter dans index.html
+- [ ] **CookieConsent** : corriger le warning React.forwardRef
 
 ### 🟢 Priorité basse
 - [ ] **Analytics** : Google Analytics / Tag Manager
@@ -247,6 +283,7 @@ Couleurs par token sémantique appliquées sur toutes les pages :
 
 | Version | Date | Changements |
 |---------|------|-------------|
+| 5.0 | 06/03/2026 | Enrichissement SEO (BreadcrumbList Blog/About, foundingDate corrigé 2014), harmonisation visuelle (6 témoignages, 3 stats RepairShowcase), maillage interne contextuel sur toutes les pages services (liens services + blog), mise à jour documentation |
 | 4.0 | 06/03/2026 | Nettoyage données (suppression HD Connect), harmonisation badges et statistiques colorées sur toutes les pages, mise à jour documentation |
 | 3.0 | 04/03/2026 | Consolidation documentation, 18 articles blog, harmonisation design, section régions France complète |
 | 2.0 | 23/02/2026 | 53 pages localisées, animations avancées, mobile-first |
@@ -285,4 +322,4 @@ pnpm run check
 
 ---
 
-**Répar'Action Volets — Cahier des charges v4.0**
+**Répar'Action Volets — Cahier des charges v5.0**

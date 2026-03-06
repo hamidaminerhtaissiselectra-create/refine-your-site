@@ -41,7 +41,7 @@ const TestimonialsSection = () => (
       </motion.div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-        {testimonials.slice(0, 3).map((t, i) => (
+        {testimonials.map((t, i) => (
           <motion.div key={t.name} {...staggerItem(i)} {...hoverLift}
             className="bg-card rounded-2xl p-8 card-shadow border border-border hover:card-shadow-hover transition-all duration-500"
           >
