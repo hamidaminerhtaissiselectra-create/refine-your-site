@@ -187,20 +187,28 @@ const IdFPage = () => {
 
   const faqs = [
     {
-      question: "Quel est le délai d'intervention en Île-de-France ?",
-      answer: "Nous intervenons rapidement dans tous les départements de la région. Les délais varient de 48h à 72h selon votre localisation. Pour les urgences, contactez-nous directement."
+      question: "Quel est le délai d'intervention en banlieue parisienne ?",
+      answer: "En petite couronne (92, 93, 94), nous intervenons sous 24 à 48h. En grande couronne (77, 78, 91, 95), comptez 48 à 72h. Pour les urgences de sécurité (volet bloqué ouvert, effraction), nous traitons la demande en priorité quel que soit le département."
     },
     {
-      question: "Couvrez-vous tous les départements de l'IdF ?",
-      answer: "Oui, nous couvrons les 7 départements : Seine-et-Marne (77), Yvelines (78), Essonne (91), Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94) et Val-d'Oise (95)."
+      question: "Y a-t-il des frais de déplacement en Île-de-France ?",
+      answer: "Aucun frais de déplacement en petite couronne (92, 93, 94). En grande couronne, un forfait déplacement de 20 à 30€ s'applique selon la distance. Ce forfait est offert si vous acceptez le devis. Diagnostic toujours gratuit."
     },
     {
-      question: "Proposez-vous des devis gratuits en IdF ?",
-      answer: "Absolument. Tous nos devis sont gratuits et sans engagement. Contactez-nous pour une évaluation précise de vos besoins, où que vous soyez en Île-de-France."
+      question: "Couvrez-vous tous les départements de l'Île-de-France ?",
+      answer: "Oui, nous couvrons les 7 départements : Seine-et-Marne (77), Yvelines (78), Essonne (91), Hauts-de-Seine (92), Seine-Saint-Denis (93), Val-de-Marne (94) et Val-d'Oise (95). Plus de 50 villes desservies."
     },
     {
-      question: "Intervenez-vous sur toutes les marques de volets ?",
-      answer: "Oui, nos experts interviennent sur toutes les marques majeures : Somfy, Bubendorff, Simu, Nice, Profalux, etc., que vos volets soient manuels ou électriques."
+      question: "Intervenez-vous en résidence et en copropriété ?",
+      answer: "Oui, nous intervenons aussi bien chez les particuliers que dans les copropriétés et les résidences. Nous pouvons fournir des devis conformes aux exigences des syndics et des bailleurs sociaux."
+    },
+    {
+      question: "Quelles marques de volets roulants réparez-vous en IdF ?",
+      answer: "Nos techniciens sont experts sur toutes les marques : Somfy, Bubendorff, Profalux, Franciaflex, Simu, Nice, Becker, Came, Zurflüh-Feller. Nous disposons de pièces de rechange dans nos véhicules pour les réparations au premier passage."
+    },
+    {
+      question: "Proposez-vous des contrats de maintenance pour les copropriétés ?",
+      answer: "Oui, nous proposons des contrats de maintenance préventive pour les copropriétés et les gestionnaires immobiliers. Entretien annuel de tous les volets, vérification des moteurs, lubrification des coulisses. Tarifs dégressifs selon le nombre de volets."
     }
   ];
 

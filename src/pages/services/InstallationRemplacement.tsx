@@ -182,7 +182,7 @@ const InstallationRemplacementPage = () => {
           { q: "Faut-il un permis ou une autorisation pour installer des volets ?", a: "En copropriété, l'accord du syndic est souvent nécessaire (respect de l'harmonie de la façade). En maison individuelle, une déclaration préalable de travaux peut être requise selon la commune. Nous vous guidons." },
         ]}
       />
-      <TestimonialsSection />
+      <TestimonialsSection priorityService="installation" title="Avis Clients — Installation & Remplacement de Volets" subtitle="Les retours de nos clients après l'installation de volets roulants neufs." />
 
       {/* Maillage interne contextuel */}
       <section className="py-12 bg-section-gradient">

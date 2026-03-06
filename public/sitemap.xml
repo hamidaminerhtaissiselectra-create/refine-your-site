@@ -7,8 +7,10 @@
   <url><loc>https://reparaction-volets.fr/services/vitrerie-remplacement-vitrage</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://reparaction-volets.fr/services/motorisation-domotique</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://reparaction-volets.fr/services/depannage-express</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  
   <!-- Blog -->
   <url><loc>https://reparaction-volets.fr/blog</loc><lastmod>2026-03-06</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <!-- Articles blog thématiques -->
   <url><loc>https://reparaction-volets.fr/blog/entretien-volets</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/blog/somfy-vs-bubendorff</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/blog/guide-motorisation</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -28,6 +30,7 @@
   <url><loc>https://reparaction-volets.fr/blog/reparation-volet-creteil-94</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/blog/choisir-volet-roulant-marais-paris</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/blog/depannage-volet-montmartre-paris-18</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  
   <!-- Pages zones -->
   <url><loc>https://reparaction-volets.fr/zones-intervention</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/paris</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
@@ -70,6 +73,7 @@
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-mantesla-jolie</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-melun</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-montreuil</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-nanterre</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-neuillysur-seine</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-noisyle-sec</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-pantin</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -81,15 +85,14 @@
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-denis</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-germainen-laye</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-mande</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-maur</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-ouen</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-sevres</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-versailles</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-villejuif</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-vincennes</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-vitrysur-seine</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-saint-maur</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://reparaction-volets.fr/zones-intervention/reparation-volet-nanterre</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <!-- Pages légales -->
+  <!-- Pages légales et à propos -->
   <url><loc>https://reparaction-volets.fr/qui-sommes-nous</loc><lastmod>2026-03-06</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://reparaction-volets.fr/mentions-legales</loc><lastmod>2026-03-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://reparaction-volets.fr/politique-confidentialite</loc><lastmod>2026-03-06</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>

@@ -190,7 +190,7 @@ const MotorisationDomotiquePage = () => {
           { q: "Peut-on centraliser tous les volets sur une seule télécommande ?", a: "Oui, la centralisation est l'un de nos points forts. Une télécommande multicanaux ou l'application Somfy TaHoma vous permet de piloter tous vos volets simultanément ou individuellement." },
         ]}
       />
-      <TestimonialsSection />
+      <TestimonialsSection priorityService="motorisation" title="Avis Clients — Motorisation & Domotique" subtitle="Les avis de nos clients après la motorisation de leurs volets roulants." />
 
       {/* Maillage interne contextuel */}
       <section className="py-12 bg-section-gradient">

@@ -178,7 +178,7 @@ const DepannageExpressPage = () => {
           { q: "Le dépannage est-il couvert par mon assurance habitation ?", a: "Dans la plupart des cas, oui. Les interventions suite à effraction ou intempéries sont couvertes par votre assurance. Nous établissons un devis conforme aux exigences des assureurs." },
         ]}
       />
-      <TestimonialsSection />
+      <TestimonialsSection priorityService="dépannage" title="Avis Clients — Dépannage Express Volets Roulants" subtitle="Témoignages de nos clients secourus en urgence pour des pannes de volets roulants." />
 
       {/* Maillage interne contextuel */}
       <section className="py-12 bg-section-gradient">
