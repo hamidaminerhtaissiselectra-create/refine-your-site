@@ -17,7 +17,14 @@ interface RepairShowcaseSectionProps {
   stats?: StatItem[];
 }
 
-const RepairShowcaseSection = ({ image, title, description, highlights }: RepairShowcaseSectionProps) => {
+const defaultStats: StatItem[] = [
+  { icon: Zap, label: "Diagnostic", value: "15 min", color: "text-service-blue", iconBg: "bg-service-blue/10" },
+  { icon: Shield, label: "Garantie", value: "3 ans", color: "text-service-emerald", iconBg: "bg-service-emerald/10" },
+  { icon: Clock, label: "Intervention", value: "48h max", color: "text-service-orange", iconBg: "bg-service-orange/10" },
+];
+
+const RepairShowcaseSection = ({ image, title, description, highlights, stats }: RepairShowcaseSectionProps) => {
+  const displayStats = stats || defaultStats;
   return (
     <section className="py-16 md:py-24">
       <div className="container mx-auto px-4">
