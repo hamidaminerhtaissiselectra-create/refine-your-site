@@ -148,6 +148,41 @@ const ReparationVoletsPage = () => {
       />
       <FAQSection />
       <TestimonialsSection />
+
+      {/* Maillage interne contextuel */}
+      <section className="py-12 bg-section-gradient">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div {...fadeUp}>
+            <h2 className="font-display text-2xl font-bold text-foreground mb-4">Services Complémentaires</h2>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Découvrez nos autres services pour vos volets roulants et votre vitrerie.</p>
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {[
+                { label: "Dépannage Express", href: "/services/depannage-express" },
+                { label: "Installation & Remplacement", href: "/services/installation-remplacement-volets" },
+                { label: "Motorisation & Domotique", href: "/services/motorisation-domotique" },
+                { label: "Vitrerie & Vitrage", href: "/services/vitrerie-remplacement-vitrage" },
+              ].map((s) => (
+                <Link key={s.href} to={s.href} className="px-4 py-2 rounded-full border border-border bg-card text-sm font-semibold text-accent hover:border-accent hover:shadow-md transition-all duration-300">
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <p className="w-full text-sm font-semibold text-foreground mb-2">📖 Articles utiles :</p>
+              {[
+                { label: "Pannes fréquentes et solutions", slug: "pannes-frequentes-volets-roulants" },
+                { label: "Réparation ou remplacement ?", slug: "reparation-vs-remplacement" },
+                { label: "Entretien des volets roulants", slug: "entretien-volets-roulants" },
+              ].map((link) => (
+                <Link key={link.slug} to={`/blog/${link.slug}`} className="text-xs text-accent hover:text-accent/80 font-medium underline-offset-4 hover:underline transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <LocalZonesGrid pageId="reparation-volets" />
       <Footer />
     </main>

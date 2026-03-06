@@ -171,6 +171,41 @@ const MotorisationDomotiquePage = () => {
       />
       <FAQSection />
       <TestimonialsSection />
+
+      {/* Maillage interne contextuel */}
+      <section className="py-12 bg-section-gradient">
+        <div className="container mx-auto px-4 text-center">
+          <motion.div {...fadeUp}>
+            <h2 className="font-display text-2xl font-bold text-foreground mb-4">Services Complémentaires</h2>
+            <p className="text-muted-foreground mb-6 max-w-xl mx-auto">Découvrez nos autres services pour vos volets roulants et votre vitrerie.</p>
+            <div className="flex flex-wrap justify-center gap-3 mb-8">
+              {[
+                { label: "Réparation de volets", href: "/services/reparation-volets-roulants" },
+                { label: "Dépannage Express", href: "/services/depannage-express" },
+                { label: "Installation & Remplacement", href: "/services/installation-remplacement-volets" },
+                { label: "Vitrerie & Vitrage", href: "/services/vitrerie-remplacement-vitrage" },
+              ].map((s) => (
+                <Link key={s.href} to={s.href} className="px-4 py-2 rounded-full border border-border bg-card text-sm font-semibold text-accent hover:border-accent hover:shadow-md transition-all duration-300">
+                  {s.label}
+                </Link>
+              ))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-3">
+              <p className="w-full text-sm font-semibold text-foreground mb-2">📖 Articles utiles :</p>
+              {[
+                { label: "Guide motorisation volets", slug: "guide-motorisation-volets" },
+                { label: "Domotique et volets connectés", slug: "domotique-volets-roulants" },
+                { label: "Somfy vs Bubendorff", slug: "somfy-vs-bubendorff" },
+              ].map((link) => (
+                <Link key={link.slug} to={`/blog/${link.slug}`} className="text-xs text-accent hover:text-accent/80 font-medium underline-offset-4 hover:underline transition-colors">
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <LocalZonesGrid pageId="motorisation-domotique" />
       <Footer />
     </main>
